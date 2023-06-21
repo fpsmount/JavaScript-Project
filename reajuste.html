@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../exs.css">
+    
+    <title>Reajuste Salarial</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><button class="return" style="width: 90px;"><i class="fa-solid fa-arrow-left"></i></button></a>
+    </header>
+    <main>
+        <div class="form">
+            <Label>Digite o salário do seu empregado</Label>
+            <input type="number" placeholder="Digite aqui" id="salario">
+            <Label>Digite a "%" do reajuste salárial</Label>
+            <input type="number" placeholder="Digite aqui" id="reajuste">
+            <div class="botoes">
+                <button class="return" onclick="enviar()">Enviar</button>
+                <button class="return" onclick="limpar()">Limpar</button>
+            </div>
+        </div>
+        
+        <div class="resultado">
+            <div style="margin-bottom: 30px;">Resultado:</div>
+            
+        </div>
+    </main>
+    
+    <script>
+        function enviar() {
+            const output = document.querySelector(".entre");
+            let salario = String(document.querySelector("#salario").value);
+            salario = parseFloat(salario.replace(",","."));
+            let reajuste = String(document.querySelector("#reajuste").value);
+            reajuste = parseFloat(reajuste.replace(",","."));
+            let calc = reajuste/100;
+            let aumento = (calc*salario) + salario;
+            
+            output.innerHTML = (`O salário final do seu funcionário é R$ ${(aumento.toFixed(2)).replace(".",",")}`);
+        }
+        
+
+        function limpar() {
+            let salario = document.querySelector("#salario");
+            let reajuste = document.querySelector("#reajuste");
+            salario.value = "";
+            reajuste.value = "";
+            const output = document.querySelector(".entre");
+            output.innerHTML = "";
+        }
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

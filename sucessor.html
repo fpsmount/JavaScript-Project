@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../exs.css">
+    
+    <title>Sucessor e antecessor</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><button class="return" style="width: 90px;"><i class="fa-solid fa-arrow-left"></i></button></a>
+    </header>
+    <main>
+        <div class="form">
+            <Label>Digite um número</Label>
+            <input type="number" placeholder="Digite aqui" id="number">
+            <div class="botoes">
+                <button class="return" onclick="enviar()">Enviar</button>
+                <button class="return" onclick="limpar()">Limpar</button>
+            </div>
+        </div>
+        
+        <div class="resultado">
+            <div style="margin-bottom: 30px;">Resultado:</div>
+            
+        </div>
+    </main>
+    
+    <script>
+        function enviar() {
+            let number = parseInt(document.querySelector("#number").value);
+            let output = document.querySelector(".entre");
+            output.innerHTML = (`O antecessor de ${number} é ${number-1} e o sucessor é ${number+1}`);
+        }
+        function limpar() {
+            const limpa = document.querySelector("#number");
+            limpa.value = '';
+            const output = document.querySelector(".entre");
+            output.innerHTML = ('');   
+        }
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

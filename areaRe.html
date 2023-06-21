@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../exs.css">
+    
+    <title>Area do retangulo</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><button class="return" style="width: 90px;"><i class="fa-solid fa-arrow-left"></i></button></a>
+    </header>
+    <main>
+        <div class="form">
+            <label for="">Altura do retângulo</label>
+            <input type="number" placeholder="Digite aqui" id="altura">
+            <label for="">Comprimento do retângulo</label>
+            <input type="number" placeholder="Digite aqui" id="base">
+            <div class="botoes">
+                <button class="return" onclick="enviar()">Enviar</button>
+                <button class="return" onclick="limpar()">Limpar</button>
+            </div>
+        </div>
+        
+        <div class="resultado">
+            <div style="margin-bottom: 30px;">Resultado:</div>
+        </div>   
+    </main>
+   
+    <script>
+        function enviar() {
+            const output = document.querySelector(".entre");
+            var altura = String(document.querySelector("#altura").value);
+            altura = parseFloat(altura.replace(",", "."));
+            var base = String(document.querySelector("#base").value);
+            base = parseFloat(base.replace(",", "."));
+            var area = base*altura;
+            area = area.toFixed(2);
+            output.innerHTML = `A area do seu retângulo é ${area.replace(".", ",")}`;  
+        }
+        
+
+        function limpar() {
+            var altura = document.querySelector("#altura");
+            var base = document.querySelector("#base");
+            altura.value = "";
+            base.value = "";
+            const output = document.querySelector(".entre");
+            output.innerHTML = "";
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../exs.css">
+    <title>Peso ideal</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><button class="return" style="width: 90px;"><i class="fa-solid fa-arrow-left"></i></button></a>
+    </header>
+    <main>
+        <div class="form">
+            <Label>Digite sua altura</Label>
+            <input type="number" placeholder="Digite aqui" id="altura">
+            <div class="radio">
+                <input type="radio" name="sexo" value="m" id="m">
+                <label for="">Masculino</label>
+                <input type="radio" name="sexo" value="f" id="f">
+                <label for="">Feminino</label>
+            </div>
+            <div class="botoes">
+                <button class="return" onclick="enviar()">Enviar</button>
+                <button class="return" onclick="limpar()">Limpar</button>
+            </div>
+        </div>
+        
+        <div class="resultado">
+            <div style="margin-bottom: 30px;">Resultado:</div>
+            
+    </main>
+    
+    <script>
+        function enviar() {
+            const output = document.querySelector(".entre");
+            let altura = String(document.querySelector("#altura").value);
+            altura = parseFloat(altura.replace(",","."));
+            let m = document.querySelector("#m");
+            let f = document.querySelector("#f");
+            let calc;
+
+            if (m.checked == true) {
+                calc = (72.7*altura) - 58;
+                output.innerHTML = (`O peso ideal para um homen de ${altura.toFixed(2)} é ${(calc.toFixed(2)).replace(".", ",")} kg `);
+            }else if(f.checked == true) {
+                calc = (62.1*altura) - 44.7;
+                output.innerHTML = (`O peso ideal para uma mulher de ${altura.toFixed(2)} é ${(calc.toFixed(2)).replace(".", ",")} kg `);
+            }
+        }
+
+        function limpar() {
+            const limpa = document.querySelector("#altura");
+            limpa.value = '';
+            const output = document.querySelector(".entre");
+            output.innerHTML = ('');   
+        }
+    </script>
+</body>
+</html>
