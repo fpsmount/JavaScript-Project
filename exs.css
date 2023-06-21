@@ -1,0 +1,147 @@
+:root {
+    --body-bg-color: #121214;
+    --text-color: #ffffff;
+    --title-color: #032174;
+    --form-color: #A8A8A8;
+    --bg-button-color: #fd0000;
+}
+* {
+    font-family: Arial, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+header {
+    padding: 10px;
+}
+.return {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 1px;
+    border: 1px solid var(--bg-button-color);
+}
+.return:hover {
+    filter: brightness(100%);
+    transition: 0.2s;
+    border: 1px solid var(--bg-button-color);
+    color: var(--bg-button-color);
+    filter: brightness(100%);
+}
+
+main {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-items: flex-start;
+}
+.form {
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    border-radius: 6px;
+    height: 82%;
+}
+.form input {
+    padding: 16px 20px;
+    outline: none;
+    background-color: var(--text-color);
+    border: none;
+    margin-bottom: 10px;
+}
+
+.entre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+label {
+    padding: 0px 0px 10px 0px;
+}
+label:hover,.resultado:hover {
+    color: var(--bg-button-color);
+    filter: brightness(140%);
+    transition: 0.2s;
+}
+.label:hover {
+    border: 1px solid var(--bg-button-color);
+    filter: brightness(140%);
+}
+
+.botoes {
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+button:hover {
+    transform: scale(1.05);
+}
+footer {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+footer .name {
+    margin-left: 10px;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--text-color);
+} 
+footer a {
+    display: flex;
+   
+}
+
+footer a:hover {
+    color: var(--bg-button-color);
+    filter: brightness(120%);
+}
+
+
+@media (max-width: 980px) {
+    .resultado {
+        width: 300px;
+    }
+    .form {
+        width: 350px;
+    }
+}
+@media (max-width: 780px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form {
+        margin-bottom: 30px;
+    }
+    .botoes {
+        align-self: center;
+        display: flex;
+    }
+    button {
+        margin: 0px 2px;
+    }
+}
+
+@media (max-width: 400px) {
+    .resultado {
+        width: 270px;
+    }
+}
